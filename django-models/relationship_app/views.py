@@ -5,11 +5,11 @@ from .models import Book
 from .models import Library
 
 # Create your views here.
-def list_of_books (request, *args, **kwargs):
+def list_books (request, *args, **kwargs):
      books = Book.objects.all()
      context = {'books': books}
      return render (request, "relationship_app/list_books.html", context)
 
-class library_of_detail (ListView):
+class LibraryDetailView (ListView):
     queryset = Library.objects.all()
     template_name = "relationship_app/library_detail.html"
